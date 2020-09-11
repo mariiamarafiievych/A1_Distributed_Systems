@@ -6,7 +6,7 @@ import entities.StaffMember;
 public final class ITService {
     private final StaffMember webDesigner;
     private final StaffMember webDeveloper;
-    Customer customer;
+    private final Customer customer;
 
     public ITService(StaffMember webDesigner, StaffMember webDeveloper, Customer customer) {
         this.webDesigner = webDesigner;
