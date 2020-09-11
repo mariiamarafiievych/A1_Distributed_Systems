@@ -33,7 +33,6 @@ public final class Main {
         ArrayList<Item> BalmList = new ArrayList<>(Arrays.asList(Balm));
 
         ArrayList<Item> OrderedItems = new ArrayList<>();
-        ArrayList<Item> ShopCart = new ArrayList<>();
 
         StaffMember PurchaseManager = new StaffMember("Purchase Manager", "Diana", "Frolova", 2000);
         StaffMember TransportationManager = new StaffMember("Transportation Manager", "Alex", "Petrov", 2000);
@@ -44,7 +43,7 @@ public final class Main {
         StaffMember WebDeveloper = new StaffMember("Web-developer", "Bogdan", "Alexandrov", 2500);
         StaffMember WebDesigner = new StaffMember("Web-designer", "Daryna", "Yakovleva", 2000);
 
-        Customer customer = new Customer("Mariia", "Petrenko", ShopCart);
+        Customer customer = new Customer("Mariia", "Petrenko");
         customer.AddItem(LotionToBuy);
         customer.AddItem(FaceCreamToBuy);
 
@@ -76,7 +75,7 @@ public final class Main {
         LogisticsService.AddItems(ShampooList, OrderedItems.get(1));
 
         System.out.println(customer.toString());
-        customer.ClearShopCart(ShopCart);
+        customer.ClearShopCart();
 
         LogisticsService.RemoveItems(LotionList);
         LogisticsService.RemoveItems(FaceCreamList);

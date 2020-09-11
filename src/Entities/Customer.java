@@ -8,17 +8,17 @@ public final class Customer {
     private final String LastName;
     private ArrayList<Item> ShopCart;
 
-    public Customer(String FirstName, String LastName,ArrayList<Item> ShopCart) {
+    public Customer(String FirstName, String LastName) {
         this.id =  UUID.randomUUID();
         this.FirstName = FirstName;
         this.LastName = LastName;
-        this.ShopCart = ShopCart;
+        this.ShopCart = new ArrayList<Item>();
     }
     public void AddItem(Item item){
-        ShopCart.add(item);
+        this.ShopCart.add(item);
     }
-    public void ClearShopCart(ArrayList<Item> ShopCart){
-        ShopCart.clear();
+    public void ClearShopCart(){
+        this.ShopCart.clear();
     }
 
     public String GetFirstName() {
@@ -27,6 +27,10 @@ public final class Customer {
 
     public String GetLastName() {
         return LastName;
+    }
+
+    public ArrayList<Item> GetShopCart(){
+        return ShopCart;
     }
 
     public String toString() {
