@@ -1,7 +1,6 @@
-package Services;
-import Entities.StaffMember;
-import Entities.Supplier;
-import Entities.Item;
+package services;
+import entities.StaffMember;
+import entities.Item;
 
 import java.util.ArrayList;
 

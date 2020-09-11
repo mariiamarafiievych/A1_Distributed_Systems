@@ -1,6 +1,6 @@
-package Services;
-import Entities.Customer;
-import Entities.StaffMember;
+package services;
+import entities.Customer;
+import entities.StaffMember;
 
 public final class SalesService {
     private final StaffMember SalesManager;

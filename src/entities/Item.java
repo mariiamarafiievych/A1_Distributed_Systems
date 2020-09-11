@@ -1,5 +1,4 @@
-package Entities;
-import java.util.Date;
+package entities;
 import java.util.UUID;
 
 public final class Item {

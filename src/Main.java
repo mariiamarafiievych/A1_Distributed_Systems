@@ -1,5 +1,5 @@
-import Entities.*;
-import Services.*;
+import entities.*;
+import services.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,85 +10,85 @@ public final class Main {
         Date date = new Date();
         System.out.println("Current date:" +date+"\n");
 
-        Item BodyCream1 = new Item("Body Cream", "Avene", 2.50);
-        Item BodyCream2 = new Item("Body Cream", "Clarins", 5.50);
-        Item BodyCream3 = new Item("Body Cream", "Avene", 2.50);
-        Item FaceCream1 = new Item("Face Cream", "La Roche-Posay", 3.75);
-        Item FaceCream2 = new Item("Face Cream", "La Roche-Posay", 3.75);
-        Item Lotion1 = new Item("Lotion", "Avene",  2.00);
-        Item Lotion2 = new Item("Lotion", "Avene",  2.00);
-        Item Shampoo = new Item("Shampoo", "Clarins",  4.75);
-        Item Balm = new Item("Balm", "Avene", 4.85);
+        Item bodyCream1 = new Item("Body Cream", "Avene", 2.50);
+        Item bodyCream2 = new Item("Body Cream", "Clarins", 5.50);
+        Item bodyCream3 = new Item("Body Cream", "Avene", 2.50);
+        Item faceCream1 = new Item("Face Cream", "La Roche-Posay", 3.75);
+        Item faceCream2 = new Item("Face Cream", "La Roche-Posay", 3.75);
+        Item lotion1 = new Item("Lotion", "Avene",  2.00);
+        Item lotion2 = new Item("Lotion", "Avene",  2.00);
+        Item shampoo = new Item("Shampoo", "Clarins",  4.75);
+        Item balm = new Item("Balm", "Avene", 4.85);
 
-        Item OrderedBalm = new Item("Balm", "Avene", 4.85);
-        Item OrderedShampoo = new Item("Shampoo", "Clarins", 4.75);
+        Item orderedBalm = new Item("Balm", "Avene", 4.85);
+        Item orderedShampoo = new Item("Shampoo", "Clarins", 4.75);
 
-        Item LotionToBuy = new Item("Lotion", "Avene", 2.00);
-        Item FaceCreamToBuy = new Item("Face Cream", "La Roche-Posay", 3.75);
+        Item lotionToBuy = new Item("Lotion", "Avene", 2.00);
+        Item faceCreamToBuy = new Item("Face Cream", "La Roche-Posay", 3.75);
 
-        ArrayList<Item> BodyCreamList = new ArrayList<>(Arrays.asList(BodyCream1, BodyCream2,BodyCream3));
-        ArrayList<Item> FaceCreamList = new ArrayList<>(Arrays.asList(FaceCream1,FaceCream2));
-        ArrayList<Item> LotionList = new ArrayList<>(Arrays.asList(Lotion1, Lotion2));
-        ArrayList<Item> ShampooList = new ArrayList<>(Arrays.asList(Shampoo));
-        ArrayList<Item> BalmList = new ArrayList<>(Arrays.asList(Balm));
+        ArrayList<Item> bodyCreamList = new ArrayList<>(Arrays.asList(bodyCream1, bodyCream2,bodyCream3));
+        ArrayList<Item> faceCreamList = new ArrayList<>(Arrays.asList(faceCream1,faceCream2));
+        ArrayList<Item> lotionList = new ArrayList<>(Arrays.asList(lotion1, lotion2));
+        ArrayList<Item> shampooList = new ArrayList<>(Arrays.asList(shampoo));
+        ArrayList<Item> balmList = new ArrayList<>(Arrays.asList(balm));
 
-        ArrayList<Item> OrderedItems = new ArrayList<>();
+        ArrayList<Item> orderedItems = new ArrayList<>();
 
-        StaffMember PurchaseManager = new StaffMember("Purchase Manager", "Diana", "Frolova", 2000);
-        StaffMember TransportationManager = new StaffMember("Transportation Manager", "Alex", "Petrov", 2000);
-        StaffMember SalesManager = new StaffMember("Sales Manager", "Kateryna", "Melnyk", 1750);
-        StaffMember AccountManager = new StaffMember("Account Manager", "Iryna", "Volkova", 2200);
-        StaffMember TargetedAdvertSpec = new StaffMember("Targeted Advertasing Spec.", "Ihor", "Ivanov", 2200);
-        StaffMember ContentManager = new StaffMember("Content Manager", "Olena", "Klymenko", 2000);
-        StaffMember WebDeveloper = new StaffMember("Web-developer", "Bogdan", "Alexandrov", 2500);
-        StaffMember WebDesigner = new StaffMember("Web-designer", "Daryna", "Yakovleva", 2000);
+        StaffMember purchaseManager = new StaffMember("Purchase Manager", "Diana", "Frolova", 2000);
+        StaffMember transportationManager = new StaffMember("Transportation Manager", "Alex", "Petrov", 2000);
+        StaffMember salesManager = new StaffMember("Sales Manager", "Kateryna", "Melnyk", 1750);
+        StaffMember accountManager = new StaffMember("Account Manager", "Iryna", "Volkova", 2200);
+        StaffMember targetedAdvertSpec = new StaffMember("Targeted Advertasing Spec.", "Ihor", "Ivanov", 2200);
+        StaffMember contentManager = new StaffMember("Content Manager", "Olena", "Klymenko", 2000);
+        StaffMember webDeveloper = new StaffMember("Web-developer", "Bogdan", "Alexandrov", 2500);
+        StaffMember webDesigner = new StaffMember("Web-designer", "Daryna", "Yakovleva", 2000);
 
         Customer customer = new Customer("Mariia", "Petrenko");
-        customer.AddItem(LotionToBuy);
-        customer.AddItem(FaceCreamToBuy);
+        customer.AddItem(lotionToBuy);
+        customer.AddItem(faceCreamToBuy);
 
-        Supplier supplier = new Supplier("Fedor", "Fedorov", OrderedItems);
+        Supplier supplier = new Supplier("Fedor", "Fedorov", orderedItems);
 
-        ITService ITService = new ITService(WebDesigner, WebDeveloper, customer);
-        LogisticService LogisticsService = new LogisticService(PurchaseManager, TransportationManager, supplier, OrderedItems);
-        MarketingService MarketingService = new MarketingService(TargetedAdvertSpec,ContentManager);
-        SalesService sales_service = new SalesService(SalesManager, AccountManager, customer);
+        ITService itService = new ITService(webDesigner, webDeveloper, customer);
+        LogisticService logisticsService = new LogisticService(purchaseManager, transportationManager, supplier, orderedItems);
+        MarketingService marketingService = new MarketingService(targetedAdvertSpec,contentManager);
+        SalesService salesService = new SalesService(salesManager, accountManager, customer);
 
-        System.out.println(ShampooList.get(0).toString());
-        System.out.println(BodyCreamList.get(0).toString());
-        System.out.println(BodyCreamList.get(1).toString());
-        System.out.println(BodyCreamList.get(2).toString());
-        System.out.println(FaceCreamList.get(0).toString());
-        System.out.println(LotionList.get(0).toString());
-        System.out.println(LotionList.get(1).toString());
-        System.out.println(BalmList.get(0).toString());
+        System.out.println(shampooList.get(0).toString());
+        System.out.println(bodyCreamList.get(0).toString());
+        System.out.println(bodyCreamList.get(1).toString());
+        System.out.println(bodyCreamList.get(2).toString());
+        System.out.println(faceCreamList.get(0).toString());
+        System.out.println(lotionList.get(0).toString());
+        System.out.println(lotionList.get(1).toString());
+        System.out.println(balmList.get(0).toString());
 
-        LogisticsService.CommunicateWithSuppliers(supplier);
-        LogisticsService.MakeOrderedItemsList(OrderedBalm);
-        LogisticsService.MakeOrderedItemsList(OrderedShampoo);
-        LogisticsService.OrderItems(OrderedItems);
-        LogisticsService.CommunicateWithDelivery();
+        logisticsService.CommunicateWithSuppliers(supplier);
+        logisticsService.MakeOrderedItemsList(orderedBalm);
+        logisticsService.MakeOrderedItemsList(orderedShampoo);
+        logisticsService.OrderItems(orderedItems);
+        logisticsService.CommunicateWithDelivery();
 
-        System.out.println(supplier.toString(OrderedItems));
+        System.out.println(supplier.toString(orderedItems));
 
-        LogisticsService.AddItems(BalmList, OrderedItems.get(0));
-        LogisticsService.AddItems(ShampooList, OrderedItems.get(1));
+        logisticsService.AddItems(balmList, orderedItems.get(0));
+        logisticsService.AddItems(shampooList, orderedItems.get(1));
 
         System.out.println(customer.toString());
         customer.ClearShopCart();
 
-        LogisticsService.RemoveItems(LotionList);
-        LogisticsService.RemoveItems(FaceCreamList);
+        logisticsService.RemoveItems(lotionList);
+        logisticsService.RemoveItems(faceCreamList);
 
-        MarketingService.SetTargetedAdvertisement();
-        MarketingService.DescribeItems(OrderedItems);
+        marketingService.SetTargetedAdvertisement();
+        marketingService.DescribeItems(orderedItems);
 
-        sales_service.MakeCommercialOffer();
-        sales_service.MonitorMarket();
-        sales_service.SearchForClients();
-        sales_service.SolveConflicts(customer);
+        salesService.MakeCommercialOffer();
+        salesService.MonitorMarket();
+        salesService.SearchForClients();
+        salesService.SolveConflicts(customer);
 
-        ITService.FixBugs();
-        ITService.ImproveInterface();
+        itService.FixBugs();
+        itService.ImproveInterface();
     }
 }

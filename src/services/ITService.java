@@ -1,7 +1,7 @@
-package Services;
+package services;
 
-import Entities.Customer;
-import Entities.StaffMember;
+import entities.Customer;
+import entities.StaffMember;
 
 public final class ITService {
     private final StaffMember WebDesigner;

@@ -1,7 +1,6 @@
-package Entities;
+package entities;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.UUID;
 
 public final class Supplier {
