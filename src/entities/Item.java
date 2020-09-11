@@ -2,24 +2,24 @@ package entities;
 import java.util.UUID;
 
 public final class Item {
-    private final String Name;
-    private final String Firm;
+    private final String name;
+    private final String firm;
     private final UUID id;
-    private final double Price;
+    private final double price;
 
-    public Item(String Name, String Firm, double Price) {
-        this.Name = Name;
-        this.Firm = Firm;
+    public Item(String name, String firm, double price) {
+        this.name = name;
+        this.firm = firm;
         this.id =  UUID.randomUUID();
-        this.Price = Price;
+        this.price = price;
     }
 
     public String GetName(){
-        return Name;
+        return name;
     }
 
     public String toString() {
-        return this.Name +" "+ this.Firm + " is " + " at the moment. And it costs " + this.Price +"\n";
+        return this.name +" "+ this.firm + " is " + " at the moment. And it costs " + this.price +"\n";
     }
 
 }

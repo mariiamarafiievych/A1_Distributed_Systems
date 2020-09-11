@@ -6,31 +6,31 @@ import entities.Item;
 import java.util.ArrayList;
 
 public final class LogisticService {
-    private final StaffMember PurchaseManager;
-    private final StaffMember TransportationManager;
+    private final StaffMember purchaseManager;
+    private final StaffMember transportationManager;
     private final Supplier supplier;
-    private final ArrayList<Item> OrderedItemsList;
+    private final ArrayList<Item> orderedItemsList;
 
-    public LogisticService(StaffMember PurchaseManager, StaffMember TransportationManager, Supplier supplier, ArrayList<Item> OrderedItemsList) {
-        this.PurchaseManager= PurchaseManager;
-        this.TransportationManager = TransportationManager;
+    public LogisticService(StaffMember purchaseManager, StaffMember transportationManager, Supplier supplier, ArrayList<Item> orderedItemsList) {
+        this.purchaseManager = purchaseManager;
+        this.transportationManager = transportationManager;
         this.supplier = supplier;
-        this.OrderedItemsList = OrderedItemsList;
+        this.orderedItemsList = orderedItemsList;
     }
 
     public void CommunicateWithSuppliers(Supplier supplier){
-        System.out.println(this.PurchaseManager+" has just communicated with supplier "+ this.supplier.GetFirstName()
+        System.out.println(this.purchaseManager +" has just communicated with supplier "+ this.supplier.GetFirstName()
                 + " "+this.supplier.GetLastName()+"\n");
     }
 
     public void MakeOrderedItemsList(Item items){
-        OrderedItemsList.add(items);
+        orderedItemsList.add(items);
     }
 
     public void OrderItems(ArrayList<Item> items_list){
-        System.out.println(this.PurchaseManager.GetFirstName()+" "+this.PurchaseManager.GetLastName()
-                +" has just ordered these items: "+ this.OrderedItemsList.get(0).GetName()+" and "
-                +this.OrderedItemsList.get(1).GetName()  + " from supplier "+this.supplier.GetFirstName()
+        System.out.println(this.purchaseManager.GetFirstName()+" "+this.purchaseManager.GetLastName()
+                +" has just ordered these items: "+ this.orderedItemsList.get(0).GetName()+" and "
+                +this.orderedItemsList.get(1).GetName()  + " from supplier "+this.supplier.GetFirstName()
                 + " "+this.supplier.GetLastName()+"\n");
     }
 
@@ -45,7 +45,7 @@ public final class LogisticService {
     }
 
     public void CommunicateWithDelivery(){
-        System.out.println(this.TransportationManager+" has just communicated with delivery."+"\n");
+        System.out.println(this.transportationManager +" has just communicated with delivery."+"\n");
     }
 }
 

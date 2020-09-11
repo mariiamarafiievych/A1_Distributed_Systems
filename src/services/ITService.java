@@ -4,23 +4,23 @@ import entities.Customer;
 import entities.StaffMember;
 
 public final class ITService {
-    private final StaffMember WebDesigner;
-    private final StaffMember WebDeveloper;
-    Customer Customer;
+    private final StaffMember webDesigner;
+    private final StaffMember webDeveloper;
+    Customer customer;
 
-    public ITService(StaffMember WebDesigner, StaffMember WebDeveloper, Customer Customer) {
-        this.WebDesigner= WebDesigner;
-        this.WebDeveloper = WebDeveloper;
-        this.Customer = Customer;
+    public ITService(StaffMember webDesigner, StaffMember webDeveloper, Customer customer) {
+        this.webDesigner = webDesigner;
+        this.webDeveloper = webDeveloper;
+        this.customer = customer;
     }
 
     public void FixBugs(){
-        System.out.println(this.WebDeveloper+" has just fixed the bug, what the customer "
-                + this.Customer.GetFirstName()+" "+this.Customer.GetLastName()+ " was complaining about."+"\n");
+        System.out.println(this.webDeveloper +" has just fixed the bug, what the customer "
+                + this.customer.GetFirstName()+" "+this.customer.GetLastName()+ " was complaining about."+"\n");
     }
 
     public void ImproveInterface(){
-        System.out.println(this.WebDesigner+" has just improved the interface."+"\n");
+        System.out.println(this.webDesigner +" has just improved the interface."+"\n");
     }
 
 

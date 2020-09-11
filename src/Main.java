@@ -75,7 +75,6 @@ public final class Main {
         logisticsService.AddItems(shampooList, orderedItems.get(1));
 
         System.out.println(customer.toString());
-        customer.ClearShopCart();
 
         logisticsService.RemoveItems(lotionList);
         logisticsService.RemoveItems(faceCreamList);
@@ -90,5 +89,6 @@ public final class Main {
 
         itService.FixBugs();
         itService.ImproveInterface();
+        customer.ClearShopCart();
     }
 }

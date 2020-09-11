@@ -5,28 +5,28 @@ import java.util.UUID;
 public final class StaffMember {
 
     private final UUID id;
-    private final String Position;
-    private final String FirstName;
-    private final String LastName;
-    private final double Salary;
+    private final String position;
+    private final String firstName;
+    private final String lastName;
+    private final double salary;
 
-    public StaffMember(String Position, String FirstName, String LastName, double Salary) {
+    public StaffMember(String position, String firstName, String lastName, double salary) {
         this.id = UUID.randomUUID();
-        this.Position = Position;
-        this.FirstName = FirstName;
-        this.LastName = LastName;
-        this.Salary=Salary;
+        this.position = position;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.salary =salary;
     }
 
     public String GetFirstName(){
-        return FirstName;
+        return firstName;
     }
 
     public String GetLastName(){
-        return LastName;
+        return lastName;
     }
 
     public String toString(){
-        return "The " + this.Position+" "+ this.FirstName +" "+ this.LastName+ " with id " + this.id;
+        return "The " + this.position +" "+ this.firstName +" "+ this.lastName + " with id " + this.id;
     }
 }

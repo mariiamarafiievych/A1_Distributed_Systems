@@ -4,37 +4,37 @@ import java.util.UUID;
 
 public final class Customer {
     private final UUID id;
-    private final String FirstName;
-    private final String LastName;
-    private ArrayList<Item> ShopCart;
+    private final String firstName;
+    private final String lastName;
+    private ArrayList<Item> shopCart;
 
-    public Customer(String FirstName, String LastName) {
+    public Customer(String firstName, String lastName) {
         this.id =  UUID.randomUUID();
-        this.FirstName = FirstName;
-        this.LastName = LastName;
-        this.ShopCart = new ArrayList<Item>();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.shopCart = new ArrayList<Item>();
     }
     public void AddItem(Item item){
-        this.ShopCart.add(item);
+        this.shopCart.add(item);
     }
     public void ClearShopCart(){
-        this.ShopCart.clear();
+        this.shopCart.clear();
     }
 
     public String GetFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public String GetLastName() {
-        return LastName;
+        return lastName;
     }
 
     public ArrayList<Item> GetShopCart(){
-        return ShopCart;
+        return shopCart;
     }
 
     public String toString() {
-        return this.FirstName +" " +this.LastName + " has just bought " + this.ShopCart.get(0).GetName() +" and "
-                +this.ShopCart.get(1).GetName()+"\n";
+        return this.firstName +" " +this.lastName + " has just bought " + this.shopCart.get(0).GetName() +" and "
+                +this.shopCart.get(1).GetName()+"\n";
     }
 }

@@ -5,26 +5,26 @@ import java.util.UUID;
 
 public final class Supplier {
     private final UUID id;
-    private final String FirstName;
-    private final String LastName;
+    private final String firstName;
+    private final String lastName;
 
-    public Supplier( String FirstName, String LastName,ArrayList<Item> ItemsList) {
+    public Supplier( String firstName, String lastName,ArrayList<Item> itemsList) {
         this.id = UUID.randomUUID();
-        this.FirstName = FirstName;
-        this.LastName = LastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public String GetFirstName(){
-        return FirstName;
+        return firstName;
     }
 
     public String GetLastName(){
-        return LastName;
+        return lastName;
     }
 
-    public String toString(ArrayList<Item> OrderedItemsList){
-        return "The supplier " +" " + this.FirstName + " " + this.LastName+ " with id " + this.id + " has just delivered these products: "
-                + OrderedItemsList.get(0).GetName() +" and "+OrderedItemsList.get(1).GetName() +"\n";
+    public String toString(ArrayList<Item> orderedItemsList){
+        return "The supplier " +" " + this.firstName + " " + this.lastName + " with id " + this.id + " has just delivered these products: "
+                + orderedItemsList.get(0).GetName() +" and "+orderedItemsList.get(1).GetName() +"\n";
     }
 
 }
