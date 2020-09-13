@@ -18,11 +18,6 @@ public final class LogisticService {
         this.orderedItemsList = orderedItemsList;
     }
 
-    public void communicateWithSuppliers(Supplier supplier){
-        System.out.println(this.purchaseManager +" has just communicated with supplier "+ this.supplier.getFirstName()
-                + " "+this.supplier.getLastName()+"\n");
-    }
-
     public void makeOrderedItemsList(Item items){
         orderedItemsList.add(items);
     }
