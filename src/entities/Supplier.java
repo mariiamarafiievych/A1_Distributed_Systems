@@ -22,7 +22,7 @@ public final class Supplier {
         return lastName;
     }
 
-    public StringBuilder supplierInfo(ArrayList<Item> orderedItemsList){
+    public String supplierInfo(ArrayList<Item> orderedItemsList){
         String startString = "The supplier ";
         StringBuilder infoOut = new StringBuilder(startString);
         infoOut.append(this.firstName).append(" ").append(this.lastName);
@@ -31,7 +31,7 @@ public final class Supplier {
         for(int i=0; i<orderedItemsList.size();i++)
             infoOut.append(orderedItemsList.get(i).getName()).append(" ");
         infoOut.append("\n");
-        return infoOut;
+        return infoOut.toString();
     }
 
 }
