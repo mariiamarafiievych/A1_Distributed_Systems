@@ -13,13 +13,19 @@ public final class MarketingService {
         this.contentManager = contentManager;
     }
 
-    public void SetTargetedAdvertisement(){
+    public void setTargetedAdvertisement(){
         System.out.println(this.targetedAdvertSpec + " has just set new targeted advertisement."+"\n");
     }
 
-    public void DescribeItems(ArrayList<Item> itemsList){
-        System.out.println(this.contentManager +" has just written new descriptions for these items: "+ itemsList.get(0).GetName()
-                +" "+itemsList.get(1).GetName() +"\n");
+    public void describeItems(ArrayList<Item> itemsList){
+        String emptyString="";
+        StringBuilder itemDescription = new StringBuilder(emptyString);
+        itemDescription.append(this.contentManager);
+        itemDescription.append(" has just written new descriptions for these items: ");
+        for(int i=0;i<itemsList.size();i++)
+            itemDescription.append(itemsList.get(i).getName()).append(" ");
+        itemDescription.append("\n");
+        System.out.println(itemDescription);
     }
 
 

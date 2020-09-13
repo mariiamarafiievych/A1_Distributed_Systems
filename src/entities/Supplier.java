@@ -14,17 +14,24 @@ public final class Supplier {
         this.lastName = lastName;
     }
 
-    public String GetFirstName(){
+    public String getFirstName(){
         return firstName;
     }
 
-    public String GetLastName(){
+    public String getLastName(){
         return lastName;
     }
 
-    public String toString(ArrayList<Item> orderedItemsList){
-        return "The supplier " +" " + this.firstName + " " + this.lastName + " with id " + this.id + " has just delivered these products: "
-                + orderedItemsList.get(0).GetName() +" and "+orderedItemsList.get(1).GetName() +"\n";
+    public StringBuilder supplierInfo(ArrayList<Item> orderedItemsList){
+        String startString = "The supplier ";
+        StringBuilder infoOut = new StringBuilder(startString);
+        infoOut.append(this.firstName).append(" ").append(this.lastName);
+        infoOut.append(" with id ").append(this.id);
+        infoOut.append(" has just delivered these products: ");
+        for(int i=0; i<orderedItemsList.size();i++)
+            infoOut.append(orderedItemsList.get(i).getName()).append(" ");
+        infoOut.append("\n");
+        return infoOut;
     }
 
 }

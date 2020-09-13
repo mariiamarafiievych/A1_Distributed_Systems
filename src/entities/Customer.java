@@ -14,27 +14,24 @@ public final class Customer {
         this.lastName = lastName;
         this.shopCart = new ArrayList<Item>();
     }
-    public void AddItem(Item item){
+    public void addItem(Item item){
         this.shopCart.add(item);
     }
-    public void ClearShopCart(){
+    public void clearShopCart(){
         this.shopCart.clear();
     }
 
-    public String GetFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public String GetLastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    public ArrayList<Item> GetShopCart(){
-        return shopCart;
-    }
-
+    @Override
     public String toString() {
-        return this.firstName +" " +this.lastName + " has just bought " + this.shopCart.get(0).GetName() +" and "
-                +this.shopCart.get(1).GetName()+"\n";
+        return this.firstName +" "+this.lastName + " has just bought " + this.shopCart.get(0).getName() +" and "
+                +this.shopCart.get(1).getName()+"\n";
     }
 }

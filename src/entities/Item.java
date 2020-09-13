@@ -14,10 +14,11 @@ public final class Item {
         this.price = price;
     }
 
-    public String GetName(){
+    public String getName(){
         return name;
     }
 
+    @Override
     public String toString() {
         return this.name +" "+ this.firm + " is " + " at the moment. And it costs " + this.price +"\n";
     }

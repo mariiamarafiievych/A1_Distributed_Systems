@@ -18,14 +18,15 @@ public final class StaffMember {
         this.salary =salary;
     }
 
-    public String GetFirstName(){
+    public String getFirstName(){
         return firstName;
     }
 
-    public String GetLastName(){
+    public String getLastName(){
         return lastName;
     }
 
+    @Override
     public String toString(){
         return "The " + this.position +" "+ this.firstName +" "+ this.lastName + " with id " + this.id;
     }

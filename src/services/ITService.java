@@ -6,20 +6,24 @@ import entities.StaffMember;
 public final class ITService {
     private final StaffMember webDesigner;
     private final StaffMember webDeveloper;
-    private final Customer customer;
 
-    public ITService(StaffMember webDesigner, StaffMember webDeveloper, Customer customer) {
+    public ITService(StaffMember webDesigner, StaffMember webDeveloper) {
         this.webDesigner = webDesigner;
         this.webDeveloper = webDeveloper;
-        this.customer = customer;
     }
 
-    public void FixBugs(){
-        System.out.println(this.webDeveloper +" has just fixed the bug, what the customer "
-                + this.customer.GetFirstName()+" "+this.customer.GetLastName()+ " was complaining about."+"\n");
+    public void fixBugs(Customer customer){
+        String emptyString="";
+        StringBuilder fixingBugs = new StringBuilder(emptyString);
+        fixingBugs.append(this.webDeveloper);
+        fixingBugs.append(" has just fixed the bug, what the customer ");
+        fixingBugs.append(customer.getFirstName()).append(" ")
+                .append(customer.getLastName());
+        fixingBugs.append(" was complaining about.").append("\n");
+        System.out.println(fixingBugs);
     }
 
-    public void ImproveInterface(){
+    public void improveInterface(){
         System.out.println(this.webDesigner +" has just improved the interface."+"\n");
     }
 

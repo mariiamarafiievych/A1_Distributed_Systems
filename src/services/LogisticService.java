@@ -18,33 +18,40 @@ public final class LogisticService {
         this.orderedItemsList = orderedItemsList;
     }
 
-    public void CommunicateWithSuppliers(Supplier supplier){
-        System.out.println(this.purchaseManager +" has just communicated with supplier "+ this.supplier.GetFirstName()
-                + " "+this.supplier.GetLastName()+"\n");
+    public void communicateWithSuppliers(Supplier supplier){
+        System.out.println(this.purchaseManager +" has just communicated with supplier "+ this.supplier.getFirstName()
+                + " "+this.supplier.getLastName()+"\n");
     }
 
-    public void MakeOrderedItemsList(Item items){
+    public void makeOrderedItemsList(Item items){
         orderedItemsList.add(items);
     }
 
-    public void OrderItems(ArrayList<Item> items_list){
-        System.out.println(this.purchaseManager.GetFirstName()+" "+this.purchaseManager.GetLastName()
-                +" has just ordered these items: "+ this.orderedItemsList.get(0).GetName()+" and "
-                +this.orderedItemsList.get(1).GetName()  + " from supplier "+this.supplier.GetFirstName()
-                + " "+this.supplier.GetLastName()+"\n");
+    public void orderItems(ArrayList<Item> items_list){
+        String emptyString="";
+        StringBuilder orderingItem = new StringBuilder(emptyString);
+        orderingItem.append(this.purchaseManager.getFirstName()).append(" ")
+                .append(this.purchaseManager.getLastName())
+                .append(" has just ordered these items: ");
+        for(int i=0; i<orderedItemsList.size();i++)
+           orderingItem.append(this.orderedItemsList.get(i).getName()).append(" ")
+                   .append(" from supplier ");
+        orderingItem.append(this.supplier.getFirstName()).append(" ")
+                .append(this.supplier.getLastName());
+        System.out.println(orderingItem);
     }
 
-    public void AddItems(ArrayList<Item> items, Item ordered_item) {
+    public void addItems(ArrayList<Item> items, Item ordered_item) {
         items.add(ordered_item);
-        System.out.println("Now the number of "+ items.get(0).GetName() + " increased to " + items.size()+"\n");
+        System.out.println("Now the number of "+ items.get(0).getName() + " increased to " + items.size()+"\n");
     }
 
-    public void RemoveItems(ArrayList<Item> items){
+    public void removeItems(ArrayList<Item> items){
         items.remove(items.size()-1);
-        System.out.println("Now the number of "+ items.get(0).GetName() + " decreased to " + items.size()+"\n");
+        System.out.println("Now the number of "+ items.get(0).getName() + " decreased to " + items.size()+"\n");
     }
 
-    public void CommunicateWithDelivery(){
+    public void communicateWithDelivery(){
         System.out.println(this.transportationManager +" has just communicated with delivery."+"\n");
     }
 }
